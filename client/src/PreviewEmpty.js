@@ -4,6 +4,7 @@ import aakar from "./aakar.jpg"
 import { useScreenshot } from 'use-react-screenshot'
 import { saveAs } from 'file-saver'
 import sign from "./sign.png"
+import certificateStamp from './certificateStamp.jpg'
 import drskinfo from "./drskinfo.jpeg"
 import doctorInfo from "./doctorInfo.jpeg"
 import { FormGroup, Form, Input, Label, Button, Col, Alert, Badge, Table, List } from 'reactstrap'
@@ -13,7 +14,6 @@ import jsPDF from 'jspdf'
 import moment from 'moment';
 import ReactToPrint from "react-to-print";
 import axios from 'axios'
-import fs from 'fs'
 import {IconButton} from '@material-ui/core'
 import SendIcon from '@mui/icons-material/Send';
 
@@ -49,8 +49,8 @@ const PreviewEmpty = ({ imageURL }) => {
             console.log(typeof(imgData))
             axios({
                 method: 'post',
-                // url: 'https://aakar-clinic.onrender.com/prescription',
-                url: 'http://localhost:5000/saveimg',
+                // url: 'https://aakar-clinic-02.onrender.com/prescription',
+                url: 'https://aakar-clinic-02.onrender.com//saveimg',
                 data:  {'base64String':imgData,'name':state.Name}, // you are sending body instead
                 headers: {
                 'Content-Type': 'application/json'
@@ -216,40 +216,25 @@ const PreviewEmpty = ({ imageURL }) => {
                              <></>
                            ) : (
                             <>
-                            <label><strong>CERTIFICATE</strong> &nbsp;</label>
+                            <label contentEditable><strong>CERTIFICATE</strong> &nbsp;</label>
                             <br /><br />
                             <p>{state.Certificate}</p>
                             </>
                            )
                         }
                         {
-                           state.textArea1 === '' ? (
-                             <></>
-                           ) : (
-                            <>
-                            <br />
+                           state.textArea1 !== '' && (
                                 <p>{state.textArea1}</p>
-                            </>
                            )
                         }
                         {
-                           state.textArea2 === '' ? (
-                             <></>
-                           ) : (
-                            <>
-                            <br />
+                           state.textArea2 !== '' && (
                             <p>{state.textArea2}</p>
-                            </>
                            )
                         }
                            {
-                           state.textArea3 === '' ? (
-                             <></>
-                           ) : (
-                            <>
-                            <br />
+                           state.textArea3 !== '' && (
                             <p>{state.textArea3}</p>
-                            </>
                            )
                         }
 
@@ -258,12 +243,10 @@ const PreviewEmpty = ({ imageURL }) => {
                     <section>
 
                         {
-                            prescription.length === 0 ? (
-                                <></>
-                            ) : (
+                            prescription.length !== 0 && (
                                 <section>
                                     <div>
-                                        <p><b>PRESCRIPTION</b>  &nbsp; ( Join parent support group and read more about Goal Directed Cognitive Approach at <a href="http://www.neuropediatrician.com">www.neuropediatrician.com</a> )</p>
+                                        <p><b>PRESCRIPTION</b></p>
                                         <br />
                                         <ul> {prescription?.map((p) => {
                                             return (
@@ -282,7 +265,7 @@ const PreviewEmpty = ({ imageURL }) => {
                         <br /> 
                         <Draggable style={{margin:"0px !important",padding:"0px !important",width:"100px !important"}}>
                         <div style={{height:"100px",margin :"0px !important",paddingLeft:"50px",maxWidth:"100px !important"}}>
-                        <img  style={{height:"85px",margin:"0px !important",padding:"0px !important"}}  src={sign} alt='sign' />
+                        <img  style={{height:"85px",margin:"0px !important",padding:"0px !important"}}  src={certificateStamp} alt='sign' />
                         <img  style={{height:"85px",margin:"0px !important",padding:"0px !important"}}  src={drskinfo} alt='drskinfo' />
                         
                         </div>

@@ -192,6 +192,20 @@ const NavbarComponent = () => {
                     >
                        Autism-Score
                     </Button>
+                    <MenuItem 
+                        onClick={handleCloseNavMenu}
+                        sx={{ backgroundColor: '#ff7043', borderRadius: '5px', margin: '8px' }}
+                    >
+                        <Button
+                            component="a"
+                            href='https://aakarclinic-appointment.netlify.app/'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            sx={{ color: 'white', fontWeight: 'bold', textTransform: 'none' }}
+                        >
+                            📅 Book Appointment
+                        </Button>
+                    </MenuItem>
                     </Menu>
                 </Box>
                 {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -263,6 +277,27 @@ const NavbarComponent = () => {
                         href='/autism-score'
                     >
                        Autism-Score
+                    </Button>
+                    <Button
+                        key='appointment'
+                        sx={{ 
+                            my: 2, 
+                            color: 'white', 
+                            display: 'block',
+                            backgroundColor: '#ff7043',
+                            padding: '8px 16px',
+                            borderRadius: '5px',
+                            marginLeft: '10px',
+                            fontWeight: 'bold',
+                            '&:hover': {
+                                backgroundColor: '#e65a2b'
+                            }
+                        }}
+                        href='https://aakarclinic-appointment.netlify.app/'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                       📅 Book Appointment
                     </Button>
                     {/* <Button
                         key='form2'

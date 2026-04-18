@@ -99,8 +99,8 @@ const Preview = ({imageURL}) => {
             console.log(typeof(imgData))
             axios({
                 method: 'post',
-                // url: 'https://aakar-clinic.onrender.com/prescription',
-                url: 'http://localhost:5000/saveimg',
+                // url: 'https://aakar-clinic-02.onrender.com/prescription',
+                url: 'https://aakar-clinic-02.onrender.com/saveimg',
                 data:  {'base64String':imgData,'name':state.Name}, // you are sending body instead
                 headers: {
                 'Content-Type': 'application/json'
@@ -320,8 +320,8 @@ const Preview = ({imageURL}) => {
             console.log(typeof(imgData))
             axios({
                 method: 'post',
-                // url: 'https://aakar-clinic.onrender.com/prescription',
-                url: 'http://localhost:5000/saveimg',
+                // url: 'https://aakar-clinic-02.onrender.com/prescription',
+                url: 'https://aakar-clinic-02.onrender.com//saveimg',
                 data:  {'base64String':imgData,'name':Name,'mobile_no':m_num,'personToMail':personToMail}, // you are sending body instead
                 headers: {
                 'Content-Type': 'application/json'
@@ -676,11 +676,10 @@ const Preview = ({imageURL}) => {
                     <br /> 
                     <p style={{fontFamily:"'Schoolbell', arial, serif"}}><b>Date : </b>{(JSON.stringify(new Date()).slice(1,11))}</p>
                     
-                    <p style={{fontSize:"10px"}}><strong>Payment Receipt No. : </strong> W-{JSON.parse(localStorage.getItem('counter'))+2000}/2023</p>
-                                    {   
-                                        (Receipt == '') ? (<div></div>) : 
-                                        (<p><strong>Payment Receipt :  </strong> {Receipt}</p>) 
-                                    }
+                    <div style={{display:"flex"}}>
+                            <p style={{ fontSize: "10px",marginTop:"5px" }}><strong>Payment Receipt No. : </strong> W-{JSON.parse(localStorage.getItem('counter')) + 2000}/2023</p>
+                            <p style={{color:"white",padding:"4px",fontSize:"11px",alignSelf:"flex-end",marginLeft:"50px",marginBottom:"20px",borderRadius:"4px",backgroundColor:'orangered'}}> <b>Follow up after 21 days between  {new Date(new Date().setDate(new Date().getDate() + 21)).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} - {new Date(new Date().setDate(new Date().getDate() + 24)).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</b></p>
+                    </div>
                     {/* <Draggable style={{margin:"0px !important",padding:"0px !important",width:"100px !important"}}> */}
                     <div style={{height:"100px",marginTop :"10px",paddingLeft:"50px",maxWidth:"100px !important"}}>
                     <img  style={{height:"75px",margin:"0px !important",padding:"0px !important"}}  src={sign} alt='sign' />

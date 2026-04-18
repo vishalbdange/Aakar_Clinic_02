@@ -115,8 +115,8 @@ const PrescriptionForm = ({ changeImgURL }) => {
         // });
         axios({
             method: 'post',
-            // url: 'https://aakar-clinic.onrender.com/prescription',
-            url: 'http://localhost:5000/prescription',
+            url: 'https://aakar-clinic-02.onrender.com/prescription',
+            // url: 'https://aakar-clinic-02.onrender.com/prescription',
             data: state, // you are sending body instead
             headers: {
             'Content-Type': 'application/json'
@@ -127,9 +127,9 @@ const PrescriptionForm = ({ changeImgURL }) => {
     }
     // const [values, setValues] = useState({ val: [
     //     "ALL MEDICINES THAT HAVE SINGLE DAILY DOSE WITHOUT TIME WRITTEN SHOULD BE GIVEN EARLY MORNING EMPTY STOMACH MIXED WITH ALL OTHER MORNING MEDICINES AS A MORNING HEALTHDRINK",
-    //     "SYR BIQPLUS  10 ML A DAY FOR 1 MONTH",
-    //     "SYR L CARNOSHINE 400 10 ML A DAY FOR 1 MONTH ",
-    //     "SYR TENONTEN 10 ML 2 TIMES A DAY FOR 1 MONTH ",
+    //     "SYR EYETOEYE/BIQPLUS/BRAINUP/PARADOX/ESPER IQ   10 ML A DAY FOR 1 MONTH",
+    //     "Tab L Carnishine/Ignicar 400 400 10 ML A DAY FOR 1 MONTH ",
+    //     "SYR Folineuro/Tenonten 2ml 2 TIMES A DAY FOR 1 MONTH ",
     //     "SYR KRTSHINE 400 / ASP Carno 10 ML A DAY FOR 1 MONTH ",
     //     "TAB SHARPZ/AlphaGPC 1 TAB A DAY FOR 1 MONTH ",
     //     "SYR DOFOTIL/GutClear 10 ML------10 ML FOR 1 MONTH ",
@@ -137,7 +137,7 @@ const PrescriptionForm = ({ changeImgURL }) => {
     //     "TAB KRAVIONQ10 1 TAB  A  DAY FOR 1 MONTH ",
     //     "TAB RISDONE/RPDONE 1MG TAB GIVE 1/8---------0-------1/4 8:00 PMFOR 1 MONTH ", // bold
     //     "TAB TOMKID 10 MG 1/4 AT 8 AM---------------1/4 AT 4PM FOR 1 MONTH ",   //bold
-    //     "SYR Flunil 1ML--------1ML FOR 1 MONTH ",
+    //     "SYR CYCLOTIN/FLUNIL 1ML--------1ML FOR 1 MONTH ",
     //     "SYR MEMTONE 2ML------------2ML 8:00 PM  FOR 1 MONTH ",
     // ] });
     const [values, setValues] = useState({ val: [
@@ -380,32 +380,32 @@ const PrescriptionForm = ({ changeImgURL }) => {
     ]))
     localStorage.setItem("fine_motor_medicines",JSON.stringify([ 
         "SYR KREBSOMAG 10ML DAILY FOR 1 MONTH",
-        "SYR QCARNI 1O 10ML DAILY FOR 1 MONTH",
+        "SYR NEUBICARQ10/SYR KRAVION GOLD 10ML DAILY FOR 1 MONTH",
         "T. KRAVIONQ10 1 TAB DAILY FOR  1MONTH",
-        "T.MINAMINQPLUS 1 TAB DAILY FOR 1 MONTH",
-        "T.BYCINE OD / ESSFOL 1 TAB DAILY FOR 1 MONTH",
-        "T.REJUNEX CD3 1 TAB DAILY FOR 1 MONTH",
-        "T. SHARPZ  1TAB DAILY FOR 1 MONTH"
+        "T. MINAMINQPLUS 1 TAB DAILY FOR 1 MONTH",
+        "T. BYCINE OD / ESSFOL 1 TAB DAILY FOR 1 MONTH",
+        "T. REJUNEX CD3 1 TAB DAILY FOR 1 MONTH",
+        "SYR SHARPZ KIDS 3ml DAILY FOR 1 MONTH"
     
     ]))
 
    localStorage.setItem("control_medicines",JSON.stringify([ 
         "T. TOMKID 10MG 1/2(8AM)_________1/2(4PM)  FOR 1 MONTH",
-        "T.RPDONE 1MG   1/4_________1/4 FOR 1 MONTH",
-        "T. RISDONE LS (2MG) 1/2________1/2 FOR 1 MONTH",
+        "T. RPDONE 1MG   1/4_________1/4 FOR 1 MONTH",
+        "T. RISDONE (2MG) 1/2________1/2 FOR 1 MONTH",
         "SYR MEMTONE 2ML__________2ML_________5ML FOR 1 MONTH ",
         "T. ASPRITO 5MG 1/4--------1/4 FOR 1 MONTH ",
-        "SYR. FLUNIL 2ML---------2ML---------0ML FOR 1 MONTH",
-        "Capsule FLUNIL 10MG---------10MG----------0MG FOR 1 MONTH",
+        "SYR CYCLOTIN/FLUNIL 2ML---------2ML---------0ML FOR 1 MONTH",
+        "T.  BETEELA/FUNIL 20 mg---------10MG----------0MG FOR 1 MONTH",
         "T. DEPRANEX 5MG 1/4 MORNING ONLY DAILY FOR 1 MONTH"
     ]))
     localStorage.setItem("cognitive_medicines",JSON.stringify([ 
         "SYR  L-CARNOSHINE 400mg/ml 10ML DAILY FOR 1 MONTH",
-        "SYR BIQPLUS 10ML DAILY FOR 1 MONTH",
+        "SYR EYETOEYE/BIQPLUS/BRAINUP/PARADOX/ESPER IQ  10ML DAILY FOR 1 MONTH",
         "SYR PARADOX 10ML DAILY FOR 1 MONTH",
         "SYR ASPCARNO 10ML DAILY FOR 1 MONTH",
         "SYR KRTSHINE 10ML DAILY FOR 1 MONTH",
-        "SYR MECOB 10ML DAILY FOR 1 MONTH",
+        "SYR FOLINEURO/REXITE/MIBASO/MECOB 10ML DAILY FOR 1 MONTH",
         "SYR TENONTEN 10ml daily FOR 1 MONTH"
     ]))
     localStorage.setItem("constipation_controller",JSON.stringify([ 
